@@ -82,6 +82,9 @@ public class AirpushPlugin implements IPlugin, AdCallbackListener {
 
     }
 
+    public void onStart() {
+    }
+
     public void onStop() {
     }
 

@@ -6,6 +6,8 @@ Airpush only supports Android build targets.
 
 Create an Airpush publisher account and on the Dashboard download the SDK JAR file.  It will be named something like `com-lcmpvmsb-rildpnrr154767.jar`.  Rename this to `airpush.jar` and place it in your game's root folder next to `manifest.json`.
 
+NOTE: When you build the SDK be sure not to uncheck the "highly recommended" checkmark options or it will fail to build.
+
 Install the plugin with `basil install airpush`.
 
 Include it in the `manifest.json` file under the "addons" section for your game:
