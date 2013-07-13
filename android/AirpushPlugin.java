@@ -66,8 +66,8 @@ public class AirpushPlugin implements IPlugin, AdCallbackListener {
     public void onCreate(Activity activity, Bundle savedInstanceState) {
         this.activity = activity;
 
-		airpush = new Airpush(context, null);
-		airpush.startPushNotification(true);
+		airpush = new Airpush(context, this);
+		airpush.startPushNotification(false);
 
 		String airpushPackage = "AIRPUSH_PACKAGE";
 
