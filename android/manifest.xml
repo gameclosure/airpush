@@ -1,0 +1,17 @@
+<!--START_PLUGINS_MANIFEST-->
+<!--END_PLUGINS_MANIFEST-->
+<!--START_PLUGINS_APPLICATION-->
+	<!--Airpush-->
+	<meta-data android:name="COM.PACKAGE.APPID" android:value="AIRPUSH_API_KEY" />
+	<meta-data android:name="COM.PACKAGE.APIKEY" android:value="AIRPUSH_API_KEY"/>
+
+	<activity android:exported="false" android:name="COM.PACKAGE.SmartWallActivity"
+		android:configChanges="orientation|screenSize"
+		android:theme="@android:style/Theme.Translucent" />
+
+	<receiver android:name="com.track.conversion.TrackingReceiver" android:exported="true" >
+		<intent-filter>
+			<action android:name="com.android.vending.INSTALL_REFERRER" />
+		</intent-filter>
+	</receiver>
+<!--END_PLUGINS_APPLICATION-->

@@ -1,0 +1,21 @@
+{
+	"copyGameFiles": [
+		"airpush.jar"
+	],
+	"copyFiles": [
+		"AirpushPlugin.java"
+	],
+	"libraries": [
+	],
+	"jars": [
+		"airpush.jar"
+	],
+	"injectionXML": "manifest.xml",
+	"injectionXSL": "manifest.xsl",
+	"injectionSource": [
+		{
+			"regex": "AIRPUSH_PACKAGE",
+			"keyForReplace": "airpushPackage"
+		}
+	]
+}
