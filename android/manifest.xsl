@@ -3,7 +3,7 @@
 
 	<xsl:param name="airpushAppID" />
 	<xsl:param name="airpushAPIKey" />
-	<xsl:param name="package" />
+	<xsl:param name="airpushPackage" />
 
 	<xsl:output indent="yes" />
 	<xsl:template match="comment()" />
@@ -11,7 +11,7 @@
 	<xsl:template match="meta-data[@android:name='COM.PACKAGE.APPID']">
 		<meta-data android:name="COM.PACKAGE.APPID" android:value="{$airpushAppID}">
 			<xsl:attribute name="android:name">
-				<xsl:value-of select="concat($package,'.APPID')" />
+				<xsl:value-of select="concat($airpushPackage,'.APPID')" />
 			</xsl:attribute>
 		</meta-data>
 	</xsl:template>
@@ -19,7 +19,7 @@
 	<xsl:template match="meta-data[@android:name='COM.PACKAGE.APIKEY']">
 		<meta-data android:name="COM.PACKAGE.APIKEY" android:value="{$airpushAPIKey}">
 			<xsl:attribute name="android:name">
-				<xsl:value-of select="concat($package,'.APIKEY')" />
+				<xsl:value-of select="concat($airpushPackage,'.APIKEY')" />
 			</xsl:attribute>
 		</meta-data>
 	</xsl:template>
@@ -29,7 +29,7 @@
 			android:configChanges="orientation|screenSize"
 			android:theme="@android:style/Theme.Translucent">
 			<xsl:attribute name="android:name">
-				<xsl:value-of select="concat($package,'.SmartWallActivity')" />
+				<xsl:value-of select="concat($airpushPackage,'.SmartWallActivity')" />
 			</xsl:attribute>
 		</activity>
 	</xsl:template>
