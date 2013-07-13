@@ -1,13 +1,27 @@
 <!--START_PLUGINS_MANIFEST-->
+	<!--Airpush-->
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 <!--END_PLUGINS_MANIFEST-->
 <!--START_PLUGINS_APPLICATION-->
 	<!--Airpush-->
-	<meta-data android:name="COM.PACKAGE.APPID" android:value="AIRPUSH_API_KEY" />
+	<meta-data android:name="COM.PACKAGE.APPID" android:value="AIRPUSH_APP_ID" />
 	<meta-data android:name="COM.PACKAGE.APIKEY" android:value="AIRPUSH_API_KEY"/>
 
 	<activity android:exported="false" android:name="COM.PACKAGE.SmartWallActivity"
 		android:configChanges="orientation|screenSize"
 		android:theme="@android:style/Theme.Translucent" />
+
+	<activity android:name="COM.PACKAGE.BrowserActivity"
+		android:configChanges="orientation|screenSize" />
+
+	<service android:name="COM.PACKAGE.PushService" android:exported="false" />
+	<receiver android:name="COM.PACKAGE.BootReceiver" android:exported="false" >
+		<intent-filter>
+			<action android:name="android.intent.action.BOOT_COMPLETED" />
+			<category android:name="android.intent.category.HOME" />
+		</intent-filter>
+	</receiver>
 
 	<receiver android:name="com.track.conversion.TrackingReceiver" android:exported="true" >
 		<intent-filter>

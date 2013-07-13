@@ -3,7 +3,8 @@
 		"airpush.jar"
 	],
 	"copyFiles": [
-		"AirpushPlugin.java"
+		"AirpushPlugin.java",
+		"res/layout/airpush_notify.xml"
 	],
 	"libraries": [
 	],

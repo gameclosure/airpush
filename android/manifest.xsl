@@ -34,6 +34,35 @@
 		</activity>
 	</xsl:template>
 
+	<xsl:template match="activity[@android:name='COM.PACKAGE.BrowserActivity']">
+		<activity android:name="COM.PACKAGE.BrowserActivity"
+			android:configChanges="orientation|screenSize">
+			<xsl:attribute name="android:name">
+				<xsl:value-of select="concat($airpushPackage,'.BrowserActivity')" />
+			</xsl:attribute>
+		</activity>
+	</xsl:template>
+
+	<xsl:template match="service[@android:name='COM.PACKAGE.PushService']">
+		<service android:name="COM.PACKAGE.PushService" android:exported="false">
+			<xsl:attribute name="android:name">
+				<xsl:value-of select="concat($airpushPackage,'.PushService')" />
+			</xsl:attribute>
+		</service>
+	</xsl:template>
+
+	<xsl:template match="receiver[@android:name='COM.PACKAGE.BootReceiver']">
+		<receiver android:name="COM.PACKAGE.BootReceiver" android:exported="false" >
+			<xsl:attribute name="android:name">
+				<xsl:value-of select="concat($airpushPackage,'.BootReceiver')" />
+			</xsl:attribute>
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<category android:name="android.intent.category.HOME" />
+			</intent-filter>
+		</receiver>
+	</xsl:template>
+
 	<xsl:template match="@*|node()">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
