@@ -35,7 +35,7 @@ Under the Android section, you can configure the Airpush plugin:
 	}
 ~~~
 
-## Testing TODO TODO TODO TODO TODO TODO TODO TODO TODO
+## Testing
 
 To test for successful integration, build your game:
 
@@ -52,8 +52,8 @@ adb logcat | grep -i airpush
 If Airpush is hooked up properly, you'll see something like this:
 
 ~~~
+E/JS      (26038): {plugins} Instantiated: com.tealeaf.plugin.plugins.AirpushPlugin
+I/AirpushSDK(26038): SDK enabled: true
 ~~~
 
-(You'll see your own logs instead of AppStart and UpgradePriceGroup)
-
-You can conclusively confirm events are going through on the Airpush website.
+Look out for warnings in the console that indicates a problem with your setup.

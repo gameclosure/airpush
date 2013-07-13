@@ -17,7 +17,7 @@
 	</xsl:template>
 
 	<xsl:template match="meta-data[@android:name='COM.PACKAGE.APIKEY']">
-		<meta-data android:name="COM.PACKAGE.APIKEY" android:value="{$airpushAPIKey}">
+		<meta-data android:name="COM.PACKAGE.APIKEY" android:value="android*{$airpushAPIKey}">
 			<xsl:attribute name="android:name">
 				<xsl:value-of select="concat($airpushPackage,'.APIKEY')" />
 			</xsl:attribute>

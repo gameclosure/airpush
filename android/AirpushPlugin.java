@@ -68,6 +68,7 @@ public class AirpushPlugin implements IPlugin, AdCallbackListener {
 
 		airpush = new Airpush(context, this);
 		airpush.startPushNotification(false);
+		airpush.startIconAd();
 
 		String airpushPackage = "AIRPUSH_PACKAGE";
 
